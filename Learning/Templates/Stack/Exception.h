@@ -3,21 +3,15 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
-class StackException
+class StackException : public std::runtime_error
 {
-private:
-    std::string exc;
-    
 public:
-    // Constructor
-    StackException(std::string _exc)
-        : exc {_exc} 
+    StackException(const char* message)
+        : std::runtime_error(message) 
     {
     }
-
-    // Get exception description
-    void what() { std::cout << '\n' << this->exc << '\n'; }
 };
 
 #endif
