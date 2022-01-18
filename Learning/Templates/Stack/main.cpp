@@ -1,7 +1,8 @@
 #include <iostream>
+#include <exception>
 #include "Stack.h"
 
-#define STACK_SIZE 5
+#define STACK_SIZE 1000
 
 int main()
 {   
@@ -23,7 +24,7 @@ int main()
     }
     catch (StackException &e)
     {
-        e.what();
+        std::cout << e.what();
     }
 
     return EXIT_SUCCESS;
